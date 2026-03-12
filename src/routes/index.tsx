@@ -14,4 +14,12 @@ export const ROUTES = {
   ACTIVITY: "/activity",
   ANALYTICS: "/analytics",
   STORAGE: "/storage",
+
+  /* Admin */
+  ADMIN: "/admin",
+  ADMIN_USER_MANAGEMENT: "/admin/users",
+  ADMIN_COURSES: "/admin/courses",
+  ADMIN_AI_INSIGHTS: "/admin/ai-insights",
+  ADMIN_SETTINGS: "/admin/settings",
+  ADMIN_AUDIT_LOGS: "/admin/audit-logs",
 } as const

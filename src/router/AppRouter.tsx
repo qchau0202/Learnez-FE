@@ -1,8 +1,15 @@
-import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom"
+import { BrowserRouter, Route, Routes } from "react-router-dom"
 
 import { AppLayout } from "@/components/layout/AppLayout"
+import { AdminLayout } from "@/components/layout/AdminLayout"
 import { ROUTES } from "@/routes"
 import { DashboardPage } from "@/features/dashboard/pages/DashboardPage"
+import { AdminDashboardPage } from "@/features/admin/pages/AdminDashboardPage"
+import { UserManagementPage } from "@/features/admin/pages/UserManagementPage"
+import { CourseManagementPage } from "@/features/admin/pages/CourseManagementPage"
+import { AIInsightsPage } from "@/features/admin/pages/AIInsightsPage"
+import { AuditLogsPage } from "@/features/admin/pages/AuditLogsPage"
+import { SystemSettingsPage } from "@/features/admin/pages/SystemSettingsPage"
 import { SchedulePage } from "@/features/schedule/pages/SchedulePage"
 import { AccountManagementPage } from "@/features/iam/pages/AccountManagementPage"
 import { LoginPage } from "@/features/iam/pages/LoginPage"
@@ -22,6 +29,15 @@ export function AppRouter() {
     <BrowserRouter>
       <Routes>
         <Route path={ROUTES.LOGIN} element={<LoginPage />} />
+
+        <Route path={ROUTES.ADMIN} element={<AdminLayout />}>
+          <Route index element={<AdminDashboardPage />} />
+          <Route path="users" element={<UserManagementPage />} />
+          <Route path="courses" element={<CourseManagementPage />} />
+          <Route path="ai-insights" element={<AIInsightsPage />} />
+          <Route path="settings" element={<SystemSettingsPage />} />
+          <Route path="audit-logs" element={<AuditLogsPage />} />
+        </Route>
 
         <Route element={<AppLayout />}>
           <Route

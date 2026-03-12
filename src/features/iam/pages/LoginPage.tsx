@@ -21,8 +21,13 @@ export function LoginPage() {
   const handleLogin = (e: React.FormEvent) => {
     e.preventDefault()
     if (!studentId || !password) return
-    // TODO: wire to auth service
-    navigate(ROUTES.COURSES)
+    // Admin login: use "admin" as student ID
+    if (studentId.toLowerCase() === "admin") {
+      navigate(ROUTES.ADMIN)
+      return
+    }
+    // TODO: wire to auth service for student login
+    navigate(ROUTES.DASHBOARD)
   }
 
   return (
