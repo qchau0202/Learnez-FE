@@ -1,8 +1,9 @@
 import { NavLink, useNavigate } from "react-router-dom"
-import { Calendar, LayoutDashboard, LogOut, Settings } from "lucide-react"
+import { Calendar, LayoutDashboard, LogOut, Settings, Star } from "lucide-react"
 
 import { ROUTES } from "@/routes"
 import { cn } from "@/lib/utils"
+import { useStudentCourses } from "@/features/dashboard/context/StudentCoursesContext"
 
 type SidebarProps = {
   open?: boolean
@@ -16,11 +17,13 @@ const linkActive =
 
 export function Sidebar({ open = false }: SidebarProps) {
   const navigate = useNavigate()
+  const { courses } = useStudentCourses()
+  const starred = courses.filter((c) => c.starred)
 
   return (
     <aside
       className={cn(
-        "fixed inset-y-0 left-0 z-40 flex w-60 flex-col border-r border-gray-200 bg-slate-50 p-4 transition-transform duration-200 md:static md:translate-x-0",
+        "fixed inset-y-0 left-0 z-40 flex w-50 flex-col border-r border-gray-200 bg-white p-4 transition-transform duration-200 md:static md:translate-x-0",
         open ? "translate-x-0" : "-translate-x-full md:translate-x-0"
       )}
     >
@@ -41,7 +44,31 @@ export function Sidebar({ open = false }: SidebarProps) {
           <Calendar className="size-5 shrink-0" />
           <span>Schedule</span>
         </NavLink>
+        {starred.length > 0 && (
+        <div className="mt-4 border-t border-gray-200 pt-3">
+          <p className="mb-2 flex items-center gap-2 text-xs font-semibold uppercase tracking-wide text-slate-500">
+            <Star className="size-4 fill-amber-400 text-amber-400" />
+            Starred
+          </p>
+          <div className="space-y-1 text-xs">
+            {starred.map((course) => (
+              <NavLink
+                key={course.id}
+                to={ROUTES.COURSE_DETAIL(course.id)}
+                className="flex items-center justify-between rounded-md px-2 py-1.5 text-slate-600 hover:bg-muted hover:text-slate-900"
+              >
+                <span className="line-clamp-1">{course.title}</span>
+                <span className="text-[10px] font-medium text-slate-400">
+                  {course.code}
+                </span>
+              </NavLink>
+            ))}
+          </div>
+        </div>
+      )}
       </nav>
+
+
 
       <div className="mt-auto flex flex-col gap-1 border-t border-gray-200 pt-4">
         <NavLink

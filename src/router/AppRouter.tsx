@@ -23,6 +23,7 @@ import { NotificationCenterPage } from "@/features/assessment/pages/Notification
 import { ActivityDashboardPage } from "@/features/activity/pages/ActivityDashboardPage"
 import { AnalyticsPage } from "@/features/activity/pages/AnalyticsPage"
 import { StoragePage } from "@/features/storage/pages/StoragePage"
+import { AIAdvisorPage } from "@/features/ai/pages/AIAdvisorPage"
 
 export function AppRouter() {
   return (
@@ -70,7 +71,8 @@ export function AppRouter() {
           />
           <Route path={ROUTES.ACTIVITY} element={<ActivityDashboardPage />} />
           <Route path={ROUTES.ANALYTICS} element={<AnalyticsPage />} />
-          <Route path={ROUTES.STORAGE} element={<StoragePage />} />
+          <Route path={ROUTES.STORAGE} element={<StoragePage />} />    
+          <Route path={ROUTES.AI_ADVISOR} element={<AIAdvisorPage />} />
           <Route
             path="*"
             element={
