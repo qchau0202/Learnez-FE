@@ -50,15 +50,8 @@ export function AdminHeader({
           <div className="flex size-8 items-center justify-center rounded-full bg-primary/10 text-primary">
             <User className="size-4" />
           </div>
-          <div className="hidden text-left sm:block">
+          <div>
             <p className="text-sm font-medium text-slate-900">Admin</p>
-            <button
-              type="button"
-              onClick={onLogout}
-              className="text-xs text-slate-500 hover:text-primary"
-            >
-              Logout
-            </button>
           </div>
         </div>
       </div>

@@ -14,6 +14,7 @@ export const ROUTES = {
   ACTIVITY: "/activity",
   ANALYTICS: "/analytics",
   STORAGE: "/storage",
+  AI_ADVISOR: "/ai-advisor",
 
   /* Admin */
   ADMIN: "/admin",

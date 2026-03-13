@@ -12,9 +12,11 @@
   font-weight: 400;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
+  overflow-x: hidden;
+  scrollbar-width: none;
 
   /* Page background */
-  --background: #f8fafc;
+  --background: #f6f7fa;
   --foreground: #0f172a;
 
   /* Cards & content areas */
@@ -25,12 +27,12 @@
   --popover-foreground: #0f172a;
 
   /* Primary */
-  --primary: #036aff;
+  --primary: #184af6;
   --primary-foreground: #ffffff;
 
   /* Secondary */
   --secondary: #eff6ff;
-  --secondary-foreground: #036aff;
+  --secondary-foreground: #184af6;
 
   /* Muted */
   --muted: #e2e8f0;
@@ -44,10 +46,10 @@
 
   --border: #e2e8f0;
   --input: #e2e8f0;
-  --ring: #036aff;
+  --ring: #184af6;
 
   /* Charts */
-  --chart-1: #036aff;
+  --chart-1: #184af6;
   --chart-2: #2563eb;
   --chart-3: #0ea5e9;
   --chart-4: #22c55e;
@@ -57,12 +59,12 @@
 
   --sidebar: #f8fafc;
   --sidebar-foreground: #0f172a;
-  --sidebar-primary: #036aff;
+  --sidebar-primary: #184af6;
   --sidebar-primary-foreground: #ffffff;
   --sidebar-accent: #dbeafe;
   --sidebar-accent-foreground: #1e40af;
   --sidebar-border: #e2e8f0;
-  --sidebar-ring: #036aff;
+  --sidebar-ring: #184af6;
 }
 
 
